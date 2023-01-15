@@ -117,5 +117,8 @@ class BinarySearchTreeNode:
 
        return root
 
-        
+    if __name__ == "":
+        name = ["J","O","N","A","T","H","A","N",
+            "U.","U","R","R","E","T","E"]
+    numbers = [13, 15, 24, 6, 19, 28, 35, 45, 20, 9, 1, 45, 41]     
         
