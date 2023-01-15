@@ -116,8 +116,9 @@ def build_tree(elements):
         root.add_child(elements[i])
 
     return root
-
+print("=======================")
 print("BINARY TREE FOR LETTERS")
+print("=======================")
 
 if __name__ == '__main__':
     name = ["J", "O", "N", "A", "T", "H", "A", "N", "U", "U", "R", "R", "E", "T", "E"]
@@ -141,3 +142,29 @@ print("After deleting letter T, The ist of letters now shown in order traversal"
 print("In order traversal of the list:", name_tree.in_order_traversal())
 print("Pre order traversal of the list:", name_tree.pre_order_traversal())
 print("Post order traversal of the list:", name_tree.post_order_traversal())
+
+print("=======================")
+print("BINARY TREE FOR NUMBERS")
+print("=======================")
+
+numbers_tree = build_tree(numbers)
+print("numbers:", numbers)
+print("Minimum value:", numbers_tree.find_min())
+print("Maximum value:", numbers_tree.find_max())
+print("Is number 24 is in the list?:", numbers_tree.search(24))
+print("Is number 45 is in the list?:", numbers_tree.search(45))
+numbers_tree.delete(35)
+print("After deleting number 35, The list for numbers now shown in order traversal:",
+      numbers_tree.in_order_traversal())
+numbers_tree.delete(28)
+print("After deleting number 28, The list for numbers now shown in order traversal:",
+      numbers_tree.in_order_traversal())
+numbers_tree.delete(9)
+print("After deleting number 9, The list for numbers now shown in order traversal:",
+      numbers_tree.in_order_traversal())
+print("Sum of all numbers:", numbers_tree.calculate_sum())
+print("In order traversal of the list:", numbers_tree.in_order_traversal())
+print("Pre order traversal of the list:",
+      numbers_tree.pre_order_traversal())
+print("Post order traversal of the list:",
+      numbers_tree.post_order_traversal())
