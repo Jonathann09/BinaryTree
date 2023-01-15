@@ -1,5 +1,6 @@
-print("===JONATHAN U. URRETE===")
-print("===BSCOE 2-2===")
+print("JONATHAN U. URRETE")
+print("BSCOE 2-2")
+print()
 
 class BinarySearchTreeNode:
     def __init__(self, data):
@@ -30,13 +31,13 @@ class BinarySearchTreeNode:
                if self.left:
                  return self.left.search(val)
                else:
-                 return False
+                 return True
 
             if val > self.data:
                if self.right:
                  return self.right.search(val)
                else:
-                 return False            
+                 return True          
     
     def in_order_traversal(self):
         elements = []
@@ -108,17 +109,35 @@ class BinarySearchTreeNode:
 
         return self  
    
-    def build_tree(elements):
-       
-       root = BinarySearchTreeNode(elements[0])
+def build_tree(elements):
+    root = BinarySearchTreeNode(elements[0])
 
-       for i in range(1, len(elements)):
+    for i in range(1, len(elements)):
         root.add_child(elements[i])
 
-       return root
+    return root
 
-    if __name__ == "":
-        name = ["J","O","N","A","T","H","A","N",
-            "U.","U","R","R","E","T","E"]
+print("BINARY TREE FOR LETTERS")
+
+if __name__ == '__main__':
+    name = ["J", "O", "N", "A", "T", "H", "A", "N", "U", "U", "R", "R", "E", "T", "E"]
     numbers = [13, 15, 24, 6, 19, 28, 35, 45, 20, 9, 1, 45, 41]     
-        
+   
+name_tree = build_tree(name)
+print("Full Name Letters:", name)
+print("Minimum value:", name_tree.find_min())
+print("Maximum value:", name_tree.find_max())    
+print("Is letter J is in the list?:", name_tree.search("J"))
+print("Is letter O is in the list?:", name_tree.search("O"))
+name_tree.delete("J")
+print("After deleting letter J, The ist of letters now shown in order traversal:",
+      name_tree.in_order_traversal())
+name_tree.delete("N")
+print("After deleting letter N, The ist of letters now shown in order traversal",
+      name_tree.in_order_traversal())
+name_tree.delete("T")
+print("After deleting letter T, The ist of letters now shown in order traversal",
+      name_tree.in_order_traversal())
+print("In order traversal of the list:", name_tree.in_order_traversal())
+print("Pre order traversal of the list:", name_tree.pre_order_traversal())
+print("Post order traversal of the list:", name_tree.post_order_traversal())
